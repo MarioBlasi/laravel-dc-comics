@@ -29,7 +29,6 @@ class ComicController extends Controller
         $validatedData = $request->validate([
             'title' => 'required',
             'description' => 'required',
-            // Altri campi del form
         ]);
 
         Comic::create($validatedData);

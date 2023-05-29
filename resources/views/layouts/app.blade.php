@@ -3,18 +3,18 @@
 
 @section('content')
     <div class="container">
-        <h1>Create Comic</h1>
+        <h1>Crea Fumetto</h1>
         <form action="{{ route('comics.store') }}" method="POST">
             @csrf
             <div class="form-group">
-                <label for="title">Title:</label>
+                <label for="title">Titolo:</label>
                 <input type="text" name="title" id="title" class="form-control" required>
             </div>
             <div class="form-group">
-                <label for="description">Description:</label>
+                <label for="description">Descrizione:</label>
                 <textarea name="description" id="description" class="form-control" rows="4" required></textarea>
             </div>
-            <button type="submit" class="btn btn-primary">Create</button>
+            <button type="submit" class="btn btn-primary">Crea</button>
         </form>
     </div>
 @endsection
