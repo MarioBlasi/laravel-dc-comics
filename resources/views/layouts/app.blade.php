@@ -1,8 +1,9 @@
 
-@extends('layouts.app')
+ 
+{{-- @extends('layouts.app') --}}
 
-@section('content')
-    <div class="container">
+{{-- @section('content') --}}
+   <div class="container">
         <h1>Crea Fumetto</h1>
         <form action="{{ route('comics.store') }}" method="POST">
             @csrf
@@ -17,4 +18,6 @@
             <button type="submit" class="btn btn-primary">Crea</button>
         </form>
     </div>
-@endsection
+{{-- @endsection  --}}
+
+
