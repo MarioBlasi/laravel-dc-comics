@@ -35,7 +35,7 @@
                         <td>{{ $fumetti->price }}</td>
                         <td class="text-dark color-dark">
                             <a href="{{ route('fumettis.show', $fumetti->id) }}">View</a>
-                            <a href="{{ route('fumettis.edit', $fumetti->id) }}">Edit</a>
+                            <a href="{{ route('fumettis.update', $fumetti->id) }}">Edit</a>
                             <form action="{{ route('fumettis.destroy', $fumetti->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
