@@ -16,7 +16,7 @@
                 </tr>
             </thead>
             <tbody>
-                foreelse ($fumettis as $fumetti)
+                @forelse ($fumettis as $fumetti)
                 <tr class="row">
                     <td scope="row">{{$fumetti->id}}</td>
                     <td>

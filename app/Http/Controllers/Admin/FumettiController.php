@@ -15,7 +15,7 @@ class FumettiController extends Controller
      */
     public function index()
     {
-        dd(Fumetti::all());
+        // dd(Fumetti::all());
         $fumettis =Fumetti::orderByDesc('id')->get();
         return view('admin.fumettis.index', compact('fumettis'));
     }
@@ -27,7 +27,7 @@ class FumettiController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.fumettis.create');
     }
 
     /**
