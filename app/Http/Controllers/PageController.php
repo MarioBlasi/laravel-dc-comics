@@ -5,7 +5,7 @@ namespace App\Http\Controllers;
 // use App\Models\Comic;
 use Illuminate\Http\Request;
 
-class FumettiController extends Controller
+class PageController extends Controller
 {
     public function index()
     {

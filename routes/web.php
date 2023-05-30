@@ -8,7 +8,7 @@ use Illuminate\Http\Request;
 //     return view('welcome');
 // });
 
-Route::get('/comics', [PageController::class, 'index'])->name('home');
+Route::get('/', [PageController::class, 'index'])->name('home');
 Route::resource('admin/fumettis', FumettiController::class);
 
 // Route::get('/comics', [PageController::class, 'index'])->name('comics.index');
