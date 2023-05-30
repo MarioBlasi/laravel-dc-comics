@@ -16,7 +16,7 @@ class DatabaseSeeder extends Seeder
     {
         for ($i = 0; $i < 10; $i++) {
             $table = new table();
-           $table->save();
+            $table->save();
         }
     }
 }
