@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-return new class extends Migration
+class CreateFumettisTable extends Migration
 {
     /**
      * Run the migrations.
@@ -15,10 +15,10 @@ return new class extends Migration
     {
         Schema::create('fumettis', function (Blueprint $table) {
             $table->id();
-            $table->string('title',200);
+            $table->string('title', 200);
             $table->text('description')->nullable();
-            $table->text('image')->nullable();
-            $table->float('price', unsigned:true)->nullable();
+            $table->text('thumb')->nullable();
+            $table->float('price')->unsigned()->nullable();
             $table->date('sale_date')->nullable();
             $table->timestamps();
         });
@@ -33,4 +33,5 @@ return new class extends Migration
     {
         Schema::dropIfExists('fumettis');
     }
-};
+}
+
