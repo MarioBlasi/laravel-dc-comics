@@ -12,11 +12,11 @@ class DatabaseSeeder extends Seeder
      *
      * @return void
      */
-    public function run(Faker $faker)
-    {
-        for ($i = 0; $i < 10; $i++) {
-            $table = new table();
-            $table->save();
-        }
-    }
+    // public function run(Faker $faker)
+    // {
+    //     for ($i = 0; $i < 10; $i++) {
+    //         $table = new table();
+    //         $table->save();
+    //     }
+    // }
 }

@@ -1,11 +1,11 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin; // <-- update namespace
 
 use App\Models\Fumetti;
 use App\Http\Requests\StoreFumettiRequest;
 use App\Http\Requests\UpdateFumettiRequest;
-
+use App\Http\Controllers\Controller; // <-- importo il controller 
 class FumettiController extends Controller
 {
     /**
