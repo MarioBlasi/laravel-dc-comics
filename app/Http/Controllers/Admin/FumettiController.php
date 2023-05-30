@@ -1,88 +1,71 @@
 <?php
 
-namespace App\Http\Controllers\Admin; // <-- update namespace
+namespace App\Http\Controllers\Admin;
 
 use App\Models\Fumetti;
 use App\Http\Requests\StoreFumettiRequest;
 use App\Http\Requests\UpdateFumettiRequest;
-use App\Http\Controllers\Controller; // <-- importo il controller 
+use App\Http\Controllers\Controller;
+
 class FumettiController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function index()
     {
-        // dd(Fumetti::all());
-        $fumettis =Fumetti::orderByDesc('id')->get();
+        // Mostra una lista di tutti i fumetti
+        $fumettis = Fumetti::orderByDesc('id')->get();
         return view('admin.fumettis.index', compact('fumettis'));
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
     public function create()
     {
+        // Mostra il form per creare un nuovo fumetto
         return view('admin.fumettis.create');
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \App\Http\Requests\StoreFumettiRequest  $request
-     * @return \Illuminate\Http\Response
-     */
     public function store(StoreFumettiRequest $request)
     {
-        //
+        // Salva il nuovo fumetto nel database
+        $fumetti = new Fumetti;
+        $fumetti->title = $request->title;
+        $fumetti->description = $request->description;
+        $fumetti->thumb = $request->thumb;
+        $fumetti->price = $request->price;
+        $fumetti->sale_date = $request->sale_date;
+        $fumetti->save();
+
+        // Reindirizza a una pagina di conferma o visualizza un messaggio di successo
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\Models\Fumetti  $fumetti
-     * @return \Illuminate\Http\Response
-     */
     public function show(Fumetti $fumetti)
     {
-        //
+        // Mostra i dettagli di un singolo fumetto
+        return view('admin.fumettis.show', compact('fumetti'));
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\Models\Fumetti  $fumetti
-     * @return \Illuminate\Http\Response
-     */
     public function edit(Fumetti $fumetti)
     {
-        //
+        // Mostra il form per modificare un fumetto esistente
+        return view('admin.fumettis.edit', compact('fumetti'));
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \App\Http\Requests\UpdateFumettiRequest  $request
-     * @param  \App\Models\Fumetti  $fumetti
-     * @return \Illuminate\Http\Response
-     */
     public function update(UpdateFumettiRequest $request, Fumetti $fumetti)
     {
-        //
+        // Aggiorna i dati del fumetto nel database
+        $fumetti->title = $request->title;
+        $fumetti->description = $request->description;
+        $fumetti->thumb = $request->thumb;
+        $fumetti->price = $request->price;
+        $fumetti->sale_date = $request->sale_date;
+        $fumetti->save();
+
+        // Reindirizza a una pagina di conferma o visualizza un messaggio di successo
     }
 
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\Models\Fumetti  $fumetti
-     * @return \Illuminate\Http\Response
-     */
     public function destroy(Fumetti $fumetti)
     {
-        //
+        // Elimina un fumetto dal database
+        $fumetti->delete();
+
+        // Reindirizza a una pagina di conferma o visualizza un messaggio di successo
     }
 }
