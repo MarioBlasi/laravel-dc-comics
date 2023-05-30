@@ -17,7 +17,7 @@ return new class extends Migration
             $table->id();
             $table->string('title',200);
             $table->text('description')->nullable();
-            $table->string('image')->nullable();
+            $table->text('image')->nullable();
             $table->float('price', unsigned:true)->nullable();
             $table->date('sale_date')->nullable();
             $table->timestamps();

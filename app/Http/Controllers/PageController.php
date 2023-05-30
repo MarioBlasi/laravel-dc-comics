@@ -2,7 +2,7 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Comic;
+// use App\Models\Comic;
 use Illuminate\Http\Request;
 
 class ComicController extends Controller
@@ -14,26 +14,26 @@ class ComicController extends Controller
         return view('welcome');
     }
 
-    public function show($id)
-    {
-        $comic = Comic::findOrFail($id);
-        return view('comics.show', compact('comic'));
-    }
+    // public function show($id)
+    // {
+    //     $comic = Comic::findOrFail($id);
+    //     return view('comics.show', compact('comic'));
+    // }
 
-    public function create()
-    {
-        return view('comics.create');
-    }
+    // public function create()
+    // {
+    //     return view('comics.create');
+    // }
 
-    public function store(Request $request)
-    {
-        $validatedData = $request->validate([
-            'title' => 'required',
-            'description' => 'required',
-        ]);
+    // public function store(Request $request)
+    // {
+    //     $validatedData = $request->validate([
+    //         'title' => 'required',
+    //         'description' => 'required',
+    //     ]);
 
-        Comic::create($validatedData);
+    //     Comic::create($validatedData);
 
-        return redirect()->route('comics.index');
-    }
+    //     return redirect()->route('comics.index');
+    // }
 }

@@ -4,11 +4,12 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\ComicController;
 use Illuminate\Http\Request;
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
 
-Route::get('/comics', [PageController::class, 'index']);
+Route::get('/comics', [PageController::class, 'index'])->name('home');
+Route::resource('admin/fumettis', FumettiController::class);
 
 // Route::get('/comics', [PageController::class, 'index'])->name('comics.index');
 // Route::get('/comics/create', [PageController::class, 'create'])->name('comics.create');
