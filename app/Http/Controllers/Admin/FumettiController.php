@@ -54,15 +54,16 @@ class FumettiController extends Controller
 
     public function update(UpdateFumettiRequest $request, Fumetti $fumetti)
     {
-        //Aggiorna i dati del fumetto nel database
-        $fumetti->title = $request->title;
-        $fumetti->description = $request->description;
-        $fumetti->thumb = $request->thumb;
-        $fumetti->price = $request->price;
-        $fumetti->sale_date = $request->sale_date;
-        $fumetti->save();
+        $data =[
+            'title' => $request->title,
+            'description' => $request->description,
+            'thumb' => $request->thumb,
+            'price' => $request->price,
+            'sale_date' => $request->sale_date,
+        ];
+        $fumetti->update($data);
 
-        // Reindirizza a una pagina di conferma o visualizza un messaggio di successo
+        return view('admin.fumettis.edit')->with('message','fumetti updated');
     }
 
     public function destroy(Fumetti $fumetti)

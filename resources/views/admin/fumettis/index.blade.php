@@ -4,8 +4,8 @@
 
 <div class="container">
     @if (session('message'))
-    <div class="alert-danger" role="alert">
-        <strong>{{session('message')}}</strong>
+    <div class="alert-danger bg-primary p-2 rounded shadow-lg" role="alert">
+        <h4><strong>{{session('message')}}</strong></h4>
     </div>
     @endif
     
