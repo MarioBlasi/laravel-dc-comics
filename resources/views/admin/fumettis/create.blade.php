@@ -9,9 +9,9 @@
         @csrf
        
         <div class="mb-3">
-          <label for="name" class="form-label text-dark">Name</label>
-          <input type="text" class="form-control" name="name" id="name" class="form-control" aria-describedby="nameHelper" placeholder="">
-          <small id="nameHelper" class="text-muted">Type the fumetti name max:200 characters</small>
+          <label for="title" class="form-label text-dark">title</label>
+          <input type="text" class="form-control" name="title" id="title" class="form-control" aria-describedby="titleHelper" placeholder="">
+          <small id="titleHelper" class="text-muted">Type the fumetti name max:200 characters</small>
         </div>
         <div class="mb-3">
             <label for="thumb" class="form-label text-dark">thumb</label>

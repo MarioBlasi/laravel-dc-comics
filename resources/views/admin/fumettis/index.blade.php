@@ -44,11 +44,11 @@
                         <td class="shadow">
                             <button type="button" class="btn btn-dark w-100 "><a href="{{ route('fumettis.show', $fumetti->id) }}">View</a></button>
                             <button type="button" class="btn btn-light  w-100 "><a href="{{ route('fumettis.update', $fumetti->id) }}">Edit</a></button>
-                            {{-- <form action="{{ route('fumettis.destroy', $fumetti->id) }}" method="POST">
+                            <form action="{{ route('fumettis.destroy', $fumetti->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger  w-100 " type="submit">Delete</button>
-                            </form> --}}
+                            </form>
                         </td>
                     </tr>
                 @empty
