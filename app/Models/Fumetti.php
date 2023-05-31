@@ -8,4 +8,6 @@ use Illuminate\Database\Eloquent\Model;
 class Fumetti extends Model
 {
     use HasFactory;
+    protected $fillable = ['title', 'description', 'thumb', 'price', 'sale_date']; 
+    // protected $guarded = [];
 }

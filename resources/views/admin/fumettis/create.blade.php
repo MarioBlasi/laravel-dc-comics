@@ -25,20 +25,27 @@
           </div>
           <div class="mb-3">
             <label for="price" class="form-label text-dark">price</label>
-            <input type="text" class="form-control" name="price" id="price" class="form-control" aria-describedby="priceHelper" placeholder="99.99">
+            <input type="number" class="form-control" name="price" id="price" class="form-control" aria-describedby="priceHelper" placeholder="£ 99.99">
             <small id="priceHelper" class="text-muted">price</small>
+          </div>
+          <div class="mb-3">
+            <label for="sale_date" class="form-label text-dark">sale_date</label>
+            <input type="date" class="form-control" name="sale_date" id="sale_date" class="form-control" aria-describedby="sale_dateHelper" placeholder="£ 99.99">
+            <small id="sale_dateHelper" class="text-muted">sale_date</small>
           </div>
 
           <div class="form-check">
             <input class="form-check-input" type="checkbox" value="0" id="">
             <label class="form-check-label text-dark" for="">
-              Default checkbox
+              Demo Available?
             </label>
           </div>
           <div class="mb-3">
             <label for="description " class="form-label text-dark"><em>Description</em> </label>
             <textarea class="form-control" name="description" id="description" rows="5"></textarea>
           </div>
+
+          <button type="submit" class="btn btn-primary btn-lg btn-block">Add Fumetti</button>
     </form>
 </div>
 @endsection

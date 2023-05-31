@@ -3,6 +3,12 @@
 @section('content')
 
 <div class="container">
+    @if (session('message'))
+    <div class="alert-danger" role="alert">
+        <strong>{{session('message')}}</strong>
+    </div>
+    @endif
+    
     <div class="row-fluid">
         <div class="col bg-dark rounded mt-5 shadow-lg">
             <h1 class="text-center p-5">Fumetti Home</h1>
@@ -38,11 +44,11 @@
                         <td class="shadow">
                             <button type="button" class="btn btn-dark w-100 "><a href="{{ route('fumettis.show', $fumetti->id) }}">View</a></button>
                             <button type="button" class="btn btn-light  w-100 "><a href="{{ route('fumettis.update', $fumetti->id) }}">Edit</a></button>
-                            <form action="{{ route('fumettis.destroy', $fumetti->id) }}" method="POST">
+                            {{-- <form action="{{ route('fumettis.destroy', $fumetti->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button class="btn btn-danger  w-100 " type="submit">Delete</button>
-                            </form>
+                            </form> --}}
                         </td>
                     </tr>
                 @empty
