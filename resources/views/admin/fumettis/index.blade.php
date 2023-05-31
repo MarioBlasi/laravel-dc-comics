@@ -4,7 +4,7 @@
 
 <div class="container">
     <div class="row">
-        <div class="col bg-primary rounded">
+        <div class="col bg-dark rounded mt-5">
             <h1 class="text-center p-5">Fumetti Home</h1>
         </div>
     </div>
