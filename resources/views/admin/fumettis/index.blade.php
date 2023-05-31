@@ -3,13 +3,15 @@
 @section('content')
 
 <div class="container">
-    <div class="row">
-        <div class="col bg-dark rounded mt-5">
+    <div class="row-fluid">
+        <div class="col bg-dark rounded mt-5 shadow-lg">
             <h1 class="text-center p-5">Fumetti Home</h1>
         </div>
     </div>
 
-    <div class="table-responsive mt-5 rounded">
+    <a class="btn btn-primary" href="{{route('fumettis.create')}}"role="button">Create +</a>
+
+    <div class="table-responsive mt-5 rounded shadow-lg">
         <table class="table table-secondary shadow">
             <thead>
                 <tr>
@@ -33,19 +35,19 @@
                         <td>{{ $fumetti->description }}</td>
                         <td>{{ $fumetti->sale_date }}</td>
                         <td>{{ $fumetti->price }}</td>
-                        <td class="text-dark color-dark">
-                            <a href="{{ route('fumettis.show', $fumetti->id) }}">View</a>
-                            <a href="{{ route('fumettis.update', $fumetti->id) }}">Edit</a>
+                        <td class="shadow">
+                            <button type="button" class="btn btn-dark w-100 "><a href="{{ route('fumettis.show', $fumetti->id) }}">View</a></button>
+                            <button type="button" class="btn btn-light  w-100 "><a href="{{ route('fumettis.update', $fumetti->id) }}">Edit</a></button>
                             <form action="{{ route('fumettis.destroy', $fumetti->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit">Delete</button>
+                                <button class="btn btn-danger  w-100 " type="submit">Delete</button>
                             </form>
                         </td>
                     </tr>
                 @empty
                     <tr class="">
-                        <td colspan="7">No results</td>
+                        <td>No results</td>
                     </tr>
                 @endforelse
             </tbody>
