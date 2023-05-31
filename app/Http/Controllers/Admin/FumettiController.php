@@ -35,8 +35,8 @@ class FumettiController extends Controller
        ];
 
        Fumetti::create($data);
-       return to_route('fumettis.index')->with('message','FUMETTI ADDED');
-    //    return redirect()->route('fumettis.index')->with('message', 'Fumetti added');
+       return redirect()->route('fumettis.index')->with('message', 'FUMETTI ADDED SUCCESSFULLY !!!')->with('message_type', 'success');
+       
 
     }
 
@@ -54,23 +54,25 @@ class FumettiController extends Controller
 
     public function update(UpdateFumettiRequest $request, Fumetti $fumetti)
     {
-        // $data =[
-        //     'title' => $request->title,
-        //     'description' => $request->description,
-        //     'thumb' => $request->thumb,
-        //     'price' => $request->price,
-        //     'sale_date' => $request->sale_date,
-        // ];
-        // $fumetti->update($data);
+        $data =[
+            'title' => $request->title,
+            'description' => $request->description,
+            'thumb' => $request->thumb,
+            'price' => $request->price,
+            'sale_date' => $request->sale_date,
+        ];
+        $fumetti->update($data);
 
-        // return view('admin.fumettis.edit')->with('message','fumetti updated');
+        return view('admin.fumettis.edit')->with('message','fumetti updated');
     }
 
     public function destroy(Fumetti $fumetti)
     {
         // Elimina un fumetto dal database
-        $fumetti->delete();
-        return to_route('fumettis.index')->with('message','FUMETTI DELETED');
-        // Reindirizza a una pagina di conferma o visualizza un messaggio di successo
+        if ($fumetti->delete()) {
+            return redirect()->back()->with('message', 'FUMETTI DELETED')->with('message_type', 'danger');
+        } else {
+            return redirect()->back()->with('message', 'Errore di cancellazione.')->with('message_type', 'danger');
+        }
     }
 }

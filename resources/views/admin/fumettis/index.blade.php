@@ -4,13 +4,11 @@
 
 <div class="container">
     @if (session('message'))
-    <div class="alert alert-{{ session('message_type', 'primary') }} p-2 rounded shadow-lg" role="alert">
+    <div class=" alert alert-{{ session('message_type', 'primary') }}  rounded shadow-lg" role="alert">
         <h4><strong>{{ session('message') }}</strong></h4>
     </div>
     @endif
 
-
-    
     <div class="row-fluid">
         <div class="col bg-dark rounded mt-5 shadow-lg">
             <h1 class="text-center p-5">Fumetti Home</h1>
@@ -49,7 +47,7 @@
                             <form action="{{ route('fumettis.destroy', $fumetti->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-danger " type="submit">Delete</button>
+                                <button class="btn btn-danger w-100 " type="submit">Delete</button>
                             </form>
                         </td>
                     </tr>
