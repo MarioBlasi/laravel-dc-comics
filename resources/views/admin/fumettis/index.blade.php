@@ -47,7 +47,7 @@
                             <form action="{{ route('fumettis.destroy', $fumetti->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
-                                <button class="btn btn-danger  w-100 " type="submit">Delete</button>
+                                <button class="btn btn-danger w-100" type="submit">Delete</button>
                             </form>
                         </td>
                     </tr>
