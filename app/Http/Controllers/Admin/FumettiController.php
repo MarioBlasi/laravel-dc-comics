@@ -25,7 +25,7 @@ class FumettiController extends Controller
     public function store(StoreFumettiRequest $request)
     {
       
-        $val_data = $request->validate([
+        $data = $request->validate([
 
             'title' => 'required|min:5|max:200',
             'description' => 'nullable',

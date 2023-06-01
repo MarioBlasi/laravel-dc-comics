@@ -14,9 +14,9 @@
             <h1 class="text-center p-5">Fumetti Home</h1>
         </div>
     </div>
-
-    <a class="btn btn-primary" href="{{route('fumettis.create')}}"role="button">Create +</a>
-
+        
+     <a class="btn btn-primary w-25 mt-4" href="{{route('fumettis.create')}}"role="button">Create +</a>
+    
     <div class="table-responsive mt-5 rounded shadow-lg">
         <table class="table table-secondary shadow">
             <thead>
