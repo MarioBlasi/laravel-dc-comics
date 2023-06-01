@@ -34,15 +34,8 @@ class FumettiController extends Controller
             'sale_date' =>'nullable',
         ] );
 
-       
-        //    $fumetti->save(),
-
-    
-
        Fumetti::create($data);
        return redirect()->route('fumettis.index')->with('message', 'FUMETTI ADDED SUCCESSFULLY !!!')->with('message_type', 'success');
-       
-
     }
 
     public function show(Fumetti $fumetti)

@@ -21,8 +21,15 @@
        
         <div class="mb-3">
           <label for="title" class="form-label text-dark">title</label>
-          <input type="text" class="form-control" name="title" id="title" class="form-control" aria-describedby="titleHelper" placeholder="">
+          <input type="text" class="form-control" name="title" id="title" 
+                class="form-control @error('title') is-invalid @enderror" 
+                aria-describedby="titleHelper" placeholder="" required>
           <small id="titleHelper" class="text-muted">Type the fumetti name max:200 characters</small>
+          @error('title')
+            <div class="alert alert-danger" role="alert">
+              <strong>{{$message}}</strong>daje
+            </div>
+          @enderror  
         </div>
         <div class="mb-3">
             <label for="thumb" class="form-label text-dark">thumb</label>
