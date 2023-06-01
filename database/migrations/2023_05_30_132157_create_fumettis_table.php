@@ -16,7 +16,7 @@ class CreateFumettisTable extends Migration
         Schema::create('fumettis', function (Blueprint $table) {
             $table->id();
             $table->string('title', 200);
-            $table->text('description')->nullable();
+            $table->text('description', 255)->nullable();
             $table->text('thumb')->nullable();
             $table->float('price')->unsigned()->nullable();
             $table->date('sale_date')->nullable();

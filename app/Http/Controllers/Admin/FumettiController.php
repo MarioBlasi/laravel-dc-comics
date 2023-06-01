@@ -28,7 +28,7 @@ class FumettiController extends Controller
         $data = $request->validate([
 
             'title' => 'required|min:5|max:200',
-            'description' => 'nullable',
+            'description' => 'nullable|max:255',
             'thumb' => 'nullable',
             'price' => 'nullable',
             'sale_date' =>'nullable',
