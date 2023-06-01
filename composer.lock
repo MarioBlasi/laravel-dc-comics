@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "6290b64685e11a549c3ad55deab12832",
+    "content-hash": "f6bc6d9b0662cc5923889fe2b76246ab",
     "packages": [
         {
             "name": "brick/math",
@@ -60,6 +60,52 @@
                 }
             ],
             "time": "2023-01-15T23:15:59+00:00"
+        },
+        {
+            "name": "caouecs/laravel-lang",
+            "version": "dev-master",
+            "source": {
+                "type": "git",
+                "url": "https://github.com/caouecs/lang.git",
+                "reference": "026ecd1a28c049ee80b157ebf3e40765ccd77c12"
+            },
+            "dist": {
+                "type": "zip",
+                "url": "https://api.github.com/repos/caouecs/lang/zipball/026ecd1a28c049ee80b157ebf3e40765ccd77c12",
+                "reference": "026ecd1a28c049ee80b157ebf3e40765ccd77c12",
+                "shasum": ""
+            },
+            "require": {
+                "ext-json": "*"
+            },
+            "suggest": {
+                "andrey-helldar/laravel-lang-publisher": "Easy installation and update of translation files for your project",
+                "arcanedev/laravel-lang": "Translations manager and checker for Laravel 5",
+                "overtrue/laravel-lang": "Command to add languages in your project"
+            },
+            "default-branch": true,
+            "type": "library",
+            "notification-url": "https://packagist.org/downloads/",
+            "license": [
+                "MIT"
+            ],
+            "authors": [
+                {
+                    "name": "Laravel-Lang Team"
+                }
+            ],
+            "description": "Languages for Laravel",
+            "keywords": [
+                "lang",
+                "languages",
+                "laravel",
+                "lpm"
+            ],
+            "support": {
+                "source": "https://github.com/caouecs/lang/tree/master"
+            },
+            "abandoned": "https://github.com/Laravel-Lang/lang",
+            "time": "2020-09-01T18:52:22+00:00"
         },
         {
             "name": "dflydev/dot-access-data",
@@ -8045,7 +8091,9 @@
     ],
     "aliases": [],
     "minimum-stability": "stable",
-    "stability-flags": [],
+    "stability-flags": {
+        "caouecs/laravel-lang": 20
+    },
     "prefer-stable": true,
     "prefer-lowest": false,
     "platform": {

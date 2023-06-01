@@ -15,9 +15,9 @@
             <label for="title" class="form-label text-dark"><strong>title</strong></label>
             <input type="text" name="title" id="title" 
                   class="form-control @error('title') is-invalid @enderror" 
-                  aria-describedby="titleHelper" placeholder="" 
+                  aria-describedby="titleHelper" placeholder="inserisci il titolo" 
                   value="{{ old('title') }}" required>
-            <small id="titleHelper" class="text-muted">Type the fumetti name max:200 characters</small>
+            <small id="titleHelper" class="text-muted">Digita il nome del fumetto max: 200 caratteri</small>
             @error('title')
               <div class="alert alert-danger" role="alert">
                 <strong>Titolo ha un ERRORE :</strong>{{$message}}
@@ -30,7 +30,7 @@
             <input type="text" name="thumb" id="thumb" 
             class="form-control @error('thumb') is-invalid @enderror" 
             value="{{ old('thumb') }}" required 
-            aria-describedby="thumbHelper" placeholder="">
+            aria-describedby="thumbHelper" placeholder="inserisci il link">
             <small id="thumbHelper" class="text-muted">https:/</small>
             @error('thumb')
               <div class="alert alert-danger" role="alert">
@@ -44,8 +44,8 @@
             <input type="text" name="description" id="description"
             class="form-control @error('description') is-invalid @enderror" 
             value="{{old('description')}}" required
-             aria-describedby="descriptionHelper" placeholder="">
-            <small id="descriptionHelper" class="text-muted">description</small>
+             aria-describedby="descriptionHelper" placeholder="inserisci la descrizione">
+            <small id="descriptionHelper" class="text-muted">Digita la descrizione max: 255 caratteri</small>
             @error('description')
               <div class="alert alert-danger" role="alert">
                 <strong>la Descrizione ha un ERRORE :</strong>{{$message}}
@@ -59,7 +59,7 @@
             class="form-control @error('price') is-invalid @enderror" 
             value="{{old('price')}}" required
             aria-describedby="priceHelper" placeholder="£ 99.99">
-            <small id="priceHelper" class="text-muted">price</small>
+            <small id="priceHelper" class="text-muted">prezzo</small>
             @error('price')
               <div class="alert alert-danger" role="alert">
                 <strong>il prezzo da ERRORE :</strong>{{$message}}
@@ -73,7 +73,7 @@
             class="form-control @error('sale_date') is-invalid @enderror" 
             value="{{old('sale_date')}}" required
             aria-describedby="sale_dateHelper" placeholder="£ 99.99">
-            <small id="sale_dateHelper" class="text-muted">sale_date</small>
+            <small id="sale_dateHelper" class="text-muted">Digita la data di vendita</small>
             @error('sale_date')
               <div class="alert alert-danger" role="alert">
                 <strong>dati di vendita non sono CORRETTI:</strong>{{$message}}
@@ -94,7 +94,7 @@
             name="description" id="description" rows="5">{{old('description')}}</textarea>
             @error('description')
                 <div class="alert alert-danger" role="alert">
-                  <strong>Description, ERROR :</strong>{{$message}}
+                  <strong>la Descrizione ha un ERRORE : :</strong>{{$message}}
                 </div>
             @enderror 
           </div>

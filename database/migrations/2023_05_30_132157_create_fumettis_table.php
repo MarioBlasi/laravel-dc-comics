@@ -18,7 +18,7 @@ class CreateFumettisTable extends Migration
             $table->string('title', 200);
             $table->text('description', 255)->nullable();
             $table->text('thumb')->nullable();
-            $table->float('price')->unsigned()->nullable();
+            $table->decimal('price')->unsigned()->nullable();
             $table->date('sale_date')->nullable();
             $table->timestamps();
         });
