@@ -1,7 +1,18 @@
 @extends('layouts.app')
 
 @section('content')
+
 <div class="container">
+
+    @if($errors->any())
+    <div class="alert alert-danger" role="alert">
+      <ul>
+        @foreach ($errors->all() as $error)
+          <li>{{$error}}</li>
+        @endforeach
+      </ul>
+    </div>
+    @endif
 
     <h1 class="bg-dark rounded text-center shadow-lg">Fumetti create</h1>
     

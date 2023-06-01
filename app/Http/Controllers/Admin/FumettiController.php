@@ -24,15 +24,20 @@ class FumettiController extends Controller
 
     public function store(StoreFumettiRequest $request)
     {
-       $data =[
-           'title' => $request->title,
-           'description' => $request->description,
-           'thumb' => $request->thumb,
-           'price' => $request->price,
-           'sale_date' => $request->sale_date,
+      
+        $val_data = $request->validate([
+
+            'title' => 'required|min:5|max:200',
+            'description' => 'nullable',
+            'thumb' => 'nullable',
+            'price' => 'nullable',
+            'sale_date' =>'nullable',
+        ] );
+
+       
         //    $fumetti->save(),
 
-       ];
+    
 
        Fumetti::create($data);
        return redirect()->route('fumettis.index')->with('message', 'FUMETTI ADDED SUCCESSFULLY !!!')->with('message_type', 'success');
